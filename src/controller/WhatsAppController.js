@@ -287,7 +287,7 @@ export class WhatsAppController{
 
                 message.fromJSON(data)
 
-                if(!me && this._messagesReceived.filter(id => {return (id === data.id).length === 0})){
+                if(!me && this._messagesReceived.filter(id => {return (id === data.id)}).length === 0){
 
                     this.notification(data)
 
