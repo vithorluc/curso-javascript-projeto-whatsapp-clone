@@ -40,8 +40,8 @@ export class Chat extends Model{
 
             let users = {}
 
-            users[btoa(meEmail)] = true 
-            users[btoa(contactEmail)] = true
+            users[meEmail] = true 
+            users[contactEmail] = true
 
             Chat.getRef().add({
                 users,
@@ -64,8 +64,8 @@ export class Chat extends Model{
     static find(meEmail, contactEmail) {
 
         return Chat.getRef()
-        .where(btoa(meEmail), '==', true)
-        .where(btoa(contactEmail), '==', true)
+        .where(meEmail, '==', true)
+        .where(contactEmail, '==', true)
         .get()
         
 
